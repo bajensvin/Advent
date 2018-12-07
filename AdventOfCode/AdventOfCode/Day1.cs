@@ -20,7 +20,7 @@ namespace AdventOfCode {
         }
         public static int Part2(string[] input) {
             int currentTotalFrequency = 0;
-            HashSet<int> totalFrequencyAfterEachLoop = new HashSet<int>();
+            var totalFrequencyAfterEachLoop = new HashSet<int>();
             bool duplicate = false;
             while (!duplicate) {
                 foreach (var item in input) {
