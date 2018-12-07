@@ -9,7 +9,7 @@ namespace AdventOfCode {
         static void Main() {
             Console.WriteLine("Part 1 value: " + Part1(ReadInput()) + "");
             Console.WriteLine("Part 2 value: " + Part2(ReadInput()) + "");
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
         public static string[] ReadInput() {
             var input = File.ReadAllLines(@"./Input/Day_1/input.txt");
