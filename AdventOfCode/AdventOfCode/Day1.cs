@@ -7,11 +7,11 @@ using System.Linq;
 namespace AdventOfCode {
     class Day1 {
         static void Main() {
-            Console.WriteLine("Part 1 value: " + Part1(ReadFile()) + "");
-            Console.WriteLine("Part 2 value: " + Part2(ReadFile()) + "");
+            Console.WriteLine("Part 1 value: " + Part1(ReadInput()) + "");
+            Console.WriteLine("Part 2 value: " + Part2(ReadInput()) + "");
             Console.ReadKey();
         }
-        public static string[] ReadFile() {
+        public static string[] ReadInput() {
             var input = File.ReadAllLines(@"./Input/Day_1/input.txt");
             return input;
         }
