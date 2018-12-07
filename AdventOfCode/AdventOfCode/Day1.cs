@@ -24,7 +24,7 @@ namespace AdventOfCode {
             bool duplicate = false;
             while (!duplicate) {
                 foreach (var item in input) {
-                    currentTotalFrequency = currentTotalFrequency + int.Parse(item);
+                    currentTotalFrequency = currentTotalFrequency += int.Parse(item);
                     duplicate = totalFrequencyAfterEachLoop.Contains(currentTotalFrequency);
                     totalFrequencyAfterEachLoop.Add(currentTotalFrequency);
                     if (duplicate) {
