@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace AdventOfCode {
     class Day1 {
         static void Main() {
-            Console.WriteLine("Part 1 value: " + Part1() + "");
-            Console.WriteLine("Part 2 value: " + Part2() + "");
+            Console.WriteLine("Part 1 value: " + Part1(ReadFile()) + "");
+            Console.WriteLine("Part 2 value: " + Part2(ReadFile()) + "");
             Console.ReadKey();
         }
         public static string[] ReadFile() {
-            var input = System.IO.File.ReadAllLines(@"./Input/Day_1/input.txt");
+            var input = File.ReadAllLines(@"./Input/Day_1/input.txt");
             return input;
         }
-        public static int Part1() {
-            var input = ReadFile();
+        public static int Part1(string[] input) {
             return input.Sum(int.Parse);
         }
-        public static int Part2() {
-            var input = ReadFile().ToList();
+        public static int Part2(string[] input) {
             int currentTotalFrequency = 0;
             HashSet<int> totalFrequencyAfterEachLoop = new HashSet<int>();
             bool duplicate = false;
