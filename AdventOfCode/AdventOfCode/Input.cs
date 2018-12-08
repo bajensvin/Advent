@@ -6,10 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AdventOfCode {
-    class Day2 {
-        public string Part1() {
-            var input = Input.Read(@"./Input/Day_2/input.txt");
-            return "";
+    static class Input {
+        public static string[] Read(string filePath) {
+            return File.ReadAllLines(filePath);
         }
     }
 }
