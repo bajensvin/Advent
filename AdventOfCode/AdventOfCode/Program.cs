@@ -9,6 +9,7 @@ namespace AdventOfCode {
         static void Main() {
             Console.WriteLine("Day 1 Part 1 value: " + Day1.Part1(Input.Read(@"./Input/Day_1/Input.txt")));
             Console.WriteLine("Day 1 Part 2 value: " + Day1.Part2(Input.Read(@"./Input/Day_1/Input.txt")));
+            Console.WriteLine("Day 2 Part 1 value: " + Day2.Part1(Input.Read(@"./Input/Day_2/input.txt")));
             Console.ReadKey(true);
         }
     }
