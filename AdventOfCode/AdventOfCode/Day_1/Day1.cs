@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 
@@ -18,7 +16,6 @@ namespace AdventOfCode {
                     currentTotalFrequency = currentTotalFrequency += int.Parse(item);
                     duplicate = totalFrequencyAfterEachLoop.Contains(currentTotalFrequency);
                     totalFrequencyAfterEachLoop.Add(currentTotalFrequency);
-                    
                     if (duplicate) {
                         break;
                     }
