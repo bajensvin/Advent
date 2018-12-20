@@ -22,8 +22,36 @@ namespace AdventOfCode {
             }
             return numberOfTwos.Count() * numberOfThrees.Count();
         }
-        public static string Part2(string[] input) {
-            return "";
-        }
+        //public static string Part2(string[] input) {
+
+
+
+        //    //Look at each string, if char is not present in any other string at the same position remove it
+        //    //Get value of how many chars are common
+
+        //    List<char> charList = new List<char>();
+
+        //    foreach (var item in input.ToList()) {
+        //        charList.Add(item);
+        //    }
+        //    foreach (var item in input.ToList()) {
+        //        foreach (char c in item) {
+        //            if (input.ToList().Contains(c))
+        //        }
+        //    }
+
+
+
+        //    //Iterate over string, add all chars to an item and search for longer and longer substrings?
+        //    var list = input.ToList();
+        //    var list2 = new List<string>();
+        //    foreach (var item in list) {
+        //        list2.Add(list.Select(c => c).Where(c => c == "alpiggsvyfecjuqmnxaktdrhkz").First());
+        //    }
+        //    return "";
+        //}
+        //public class Word {
+        //    public char Chars { get; set; }
+        //}
     }
 }
