@@ -26,31 +26,37 @@ namespace AdventOfCode {
             public int DifferenceCount;
             public string Word;
             public string OtherWord;
+            public char[] CharsThatDiffer;
         }
         public static string Part2(string[] input) {
             //Needs a lot of cleanup..
             var listOfStrings = input.ToList();
-            var listOfBlas = new List<WordItem>();
+            var listOfStrs = new List<WordItem>();
+            var listOfOtherStrs = new List<WordItem>();
             int difference = 0;
             foreach (var str in listOfStrings) {
                 foreach (var otherStr in listOfStrings) {
                     if (str == otherStr) {
                         continue;
                     }
-                    WordItem bla = new WordItem();
                     for (int i = 0; i < str.Length; i++) {
                         if (str[i] != otherStr[i]) {
                             difference++;
                         }
                     }
-                    bla.DifferenceCount = difference;
-                    bla.Word = str;
-                    bla.OtherWord = otherStr;
-                    listOfBlas.Add(bla);
+                    WordItem wi = new WordItem {
+                        DifferenceCount = difference,
+                        Word = str,
+                        OtherWord = otherStr
+                    };
+                    listOfStrs.Add(wi);
                     difference = 0;
                 }
+                
             }
-            return "";
+            List<WordItem> sortedList = listOfStrs.OrderBy(s => s.DifferenceCount).ToList();
+            WordItem correctWord = sortedList.Where(s => s.DifferenceCount == 1).First();
+            return correctWord.Word + " " + correctWord.OtherWord;
         }
         public class Word {
             public char[] Chars { get; set; }
