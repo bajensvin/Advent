@@ -45,6 +45,7 @@
     <Compile Include="Day_1\Day1.cs" />
     <Compile Include="Day_2\CharObject.cs" />
     <Compile Include="Day_2\Day2.cs" />
+    <Compile Include="Day_3\Day3.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
@@ -53,12 +54,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Day_1\Input\Input.txt">
+    <Content Include="Day_1\Input\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Day_2\Input\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Day_3\Input\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
