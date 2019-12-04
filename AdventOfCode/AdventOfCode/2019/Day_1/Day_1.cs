@@ -17,11 +17,11 @@ namespace AdventOfCode._2019.Day_1
 
             foreach (var line in input)
             {
-                var value = int.Parse(line) / 3;
-                _values.Add(value);
+                var mass = int.Parse(line) / 3;
+                _values.Add(mass);
             }
 
-            return _values.Sum(y => y - 2);
+            return _values.Sum(value => value - 2);
         }
 
         public static int Part2(string[] input)
