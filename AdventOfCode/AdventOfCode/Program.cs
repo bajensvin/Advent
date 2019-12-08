@@ -16,6 +16,7 @@ namespace AdventOfCode {
             Console.WriteLine($"2019 Day 1 Part 1 value: {_2019.Day_1.Day1.Part1(Input.Read(@"./2019/Day_1/Input/input.txt"))}");
             Console.WriteLine($"2019 Day 1 Part 2 value: {_2019.Day_1.Day1.Part2(Input.Read(@"./2019/Day_1/Input/input.txt"))}");
             Console.WriteLine($"2019 Day 2 Part 1 value: {_2019.Day_2.Day2.Part1(Input.Read(@"./2019/Day_2/Input/input.txt"))}");
+            Console.WriteLine($"2019 Day 2 Part 1 value: {_2019.Day_2.Day2.Part2(Input.Read(@"./2019/Day_2/Input/input.txt"))}");
             Console.ReadKey(true);
         }
     }

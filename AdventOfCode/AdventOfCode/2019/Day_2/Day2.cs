@@ -1,57 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace AdventOfCode._2019.Day_2
 {
-    class Day2
+    internal class Day2
     {
+        const int add = 1;
+        const int multiply = 2;
+        const int stop = 99;
+        public static int[] Calculate(int[] values, int position, bool add = true)
+        {
+            var firstIndex = values[position + 1];
+            var secondIndex = values[position + 2];
+            var outputIndex = values[position + 3];
+            var noun = values[firstIndex];
+            var verb = values[secondIndex];
+
+            if (add)
+            {
+                values[outputIndex] = noun + verb;
+            }
+            else
+            {
+                values[outputIndex] = noun * verb;
+            }
+
+            return values;
+        }
+
         public static int Part1(string[] input)
         {
-
             input = string.Join(",", input).Split(',');
             var values = input.Select(int.Parse).ToArray();
 
             values[1] = 12;
             values[2] = 2;
 
-
-            //var values = new int[] { 1, 9, 10, 3, 2, 3, 11, 0, 99, 30, 40, 50 };
-            for (int i = 0; i < values.Length;)
+            for (var i = 0; i < values.Length;)
             {
                 var opCode = values[i];
-                if (opCode == 1)
+                if (opCode == add)
                 {
-                   
-                    var firstIndex = values[i + 1];
-                    var secondIndex = values[i + 2];
-                    var outputIndex = values[i + 3];
-                    var firstValue = values[firstIndex];
-                    var secondValue = values[secondIndex];
-                    var outputValue = values[outputIndex];
-                    values[outputIndex] = firstValue + secondValue;
+                    Calculate(values, i);
                     i += 4;
                 }
 
-                else if (opCode == 2)
+                else if (opCode == multiply)
                 {
-                    var firstIndex = values[i + 1];
-                    var secondIndex = values[i + 2];
-                    var outputIndex = values[i + 3];
-                    var firstValue = values[firstIndex];
-                    var secondValue = values[secondIndex];
-                    var outputValue = values[outputIndex];
-                    values[outputIndex] = firstValue * secondValue;
+                    Calculate(values, i, false);
                     i += 4;
                 }
 
-                else if (opCode == 99)
+                if (values[0] == 19690720)
                 {
-                    return values[0];
+                    var a = 0;
+                }
+
+                else if (opCode == stop)
+                {
+                    break;
                 }
             }
+
+            return values[0];
+        }
+
+        public static int Part2(string[] input)
+        {
+            
 
             return 0;
         }
