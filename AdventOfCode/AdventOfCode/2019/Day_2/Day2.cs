@@ -11,12 +11,6 @@ namespace AdventOfCode._2019.Day_2
         public static int Part1(string[] input)
         {
 
-            //För varje "opcode"
-            //1. Hitta räknesätt
-            //2. Hitta vilka positioner(index) talen man ska räkna med ligger på
-            //3. Hämta de faktiska talen från varje position och räkna därefter
-            //4. Lagra det uträknade värdet på index + 3
-            //4. När programmet träffar koden 99, avsluta direkt
             input = string.Join(",", input).Split(',');
             var values = input.Select(int.Parse).ToArray();
 
@@ -24,34 +18,36 @@ namespace AdventOfCode._2019.Day_2
             values[2] = 2;
 
 
-            //int[] hej = { 1, 9, 10, 3, 2, 3, 11, 0, 99, 30, 40, 50 };
-
-            for (int i = 0; i < values.Length; i++)
+            //var values = new int[] { 1, 9, 10, 3, 2, 3, 11, 0, 99, 30, 40, 50 };
+            for (int i = 0; i < values.Length;)
             {
-                if (values[i] == 1)
+                var opCode = values[i];
+                if (opCode == 1)
                 {
-                    var indexOfFirstValue = i + 1;
-                    var indexOfSecondValue = i + 2;
-                    var indexOfOutputValue = i + 3;
-                    var firstValue = values[indexOfFirstValue];
-                    var secondValue = values[indexOfSecondValue];
-                    var outputValue = firstValue + secondValue;
-                    values.SetValue(outputValue, indexOfOutputValue);
-                    i += 3;
+                   
+                    var firstIndex = values[i + 1];
+                    var secondIndex = values[i + 2];
+                    var outputIndex = values[i + 3];
+                    var firstValue = values[firstIndex];
+                    var secondValue = values[secondIndex];
+                    var outputValue = values[outputIndex];
+                    values[outputIndex] = firstValue + secondValue;
+                    i += 4;
                 }
-                else if (values[i] == 2)
-                {
-                    var indexOfFirstValue = i + 1;
-                    var indexOfSecondValue = i + 2;
-                    var indexOfOutputValue = i + 3;
-                    var firstValue = values[indexOfFirstValue];
-                    var secondValue = values[indexOfSecondValue];
-                    var outputValue = firstValue * secondValue;
-                    values.SetValue(outputValue, indexOfOutputValue);
-                    i += 3;
 
+                else if (opCode == 2)
+                {
+                    var firstIndex = values[i + 1];
+                    var secondIndex = values[i + 2];
+                    var outputIndex = values[i + 3];
+                    var firstValue = values[firstIndex];
+                    var secondValue = values[secondIndex];
+                    var outputValue = values[outputIndex];
+                    values[outputIndex] = firstValue * secondValue;
+                    i += 4;
                 }
-                else if (values[i] == 99)
+
+                else if (opCode == 99)
                 {
                     return values[0];
                 }
