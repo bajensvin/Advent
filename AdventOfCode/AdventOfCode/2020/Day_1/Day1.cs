@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
+﻿using System.Linq;
 
 namespace AdventOfCode._2020.Day_1
 {
-    internal class Day1
+    internal static class Day1
     {
         private static readonly string[] Input = AdventOfCode.Input.Read(@"./2020/Day_1/Input/input.txt");
         public static int Part1()
