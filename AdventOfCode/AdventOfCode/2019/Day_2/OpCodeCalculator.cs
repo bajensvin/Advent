@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode._2019.Day_2
 {
-    public class OpCodeCalculator
+    public class OpCodeProgram
     {
-        public int[] Values { get; set; }
+        private int[] Values { get; set; }
         private int Position { get; set; }
-        public int opCode { get; set; }
-        public int outputValue { get; set; }
-        public OpCodeCalculator(string[] input)
+        private int OpCode { get; set; }
+
+        private int OutputValue { get; set; }
+
+        public OpCodeProgram(string[] input)
         {
             Values = string.Join(",", input).Split(',').Select(int.Parse).ToArray();
             Position = 0;
         }
 
-        public int Calculate()
+        private int Calculate()
         {
             while (true)
             {
@@ -27,7 +29,7 @@ namespace AdventOfCode._2019.Day_2
                 var outputIndex = Values[Position + 3];
                 var firstValue = Values[firstIndex];
                 var secondValue = Values[secondIndex];
-                opCode = Values[Position];
+                OpCode = Values[Position];
 
                 switch (Values[Position])
                 {
@@ -42,7 +44,7 @@ namespace AdventOfCode._2019.Day_2
                         Position += 4;
                         break;
                     case 99:
-                        return outputValue = Values[0];
+                        return OutputValue = Values[0];
                         
                 }
             }
