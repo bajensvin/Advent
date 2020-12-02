@@ -19,6 +19,8 @@ namespace AdventOfCode {
             Console.WriteLine($"2019 Day 2 Part 2 value: {_2019.Day_2.Day2.Part2()}");
             Console.WriteLine($"2020 Day 1 Part 1 value: {_2020.Day_1.Day1.Part1()}");
             Console.WriteLine($"2020 Day 1 Part 2 value: {_2020.Day_1.Day1.Part2()}");
+            Console.WriteLine($"2020 Day 2 Part 1 value: {_2020.Day_2.Day2.Part1()}");
+            Console.WriteLine($"2020 Day 2 Part 2 value: {_2020.Day_2.Day2.Part2()}");
             Console.ReadKey(true);
         }
     }

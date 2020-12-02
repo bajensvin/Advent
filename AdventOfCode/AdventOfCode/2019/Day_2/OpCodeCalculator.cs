@@ -45,7 +45,6 @@ namespace AdventOfCode._2019.Day_2
                         break;
                     case 99:
                         return OutputValue = Values[0];
-                        
                 }
             }
         }
