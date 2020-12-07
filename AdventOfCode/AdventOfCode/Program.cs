@@ -23,6 +23,7 @@ namespace AdventOfCode {
             Console.WriteLine($"2020 Day 2 Part 2 value: {_2020.Day_2.Day2.Part2()}");
             Console.WriteLine($"2020 Day 3 Part 1 value: {_2020.Day_3.Day3.Part1()}");
             Console.WriteLine($"2020 Day 3 Part 2 value: {_2020.Day_3.Day3.Part2()}");
+            Console.WriteLine($"2020 Day 4 Part 1 value: {_2020.Day_4.Day4.Part1()}");
             Console.ReadKey(true);
         }
     }
